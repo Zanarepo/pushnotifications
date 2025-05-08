@@ -1,16 +1,16 @@
 {
   "name": "pushnotification",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
+  "description": "A simple push notification server using Node.js, Express, and Supabase",
+  "main": "index.js",
   "type": "commonjs",
-  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "echo \"No test specified\" && exit 1"
   },
+  "author": "Your Name",
+  "license": "ISC",
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4",
     "dotenv": "^16.5.0",
