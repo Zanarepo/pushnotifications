@@ -11,14 +11,14 @@ app.use(express.json());
 // Validate environment variables
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
+const apiKey = process.env.API_KEY; // Load API key from environment variables
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-
-// Set VAPID details
+// Set VAPID details using environment variables
 webPush.setVapidDetails(
   "mailto:pzana.fred@gmail.com",
-  "BFTTHTZpo52AJnRcC1Xc39U8YZFNTVsTLLmPrqrMiXFZDwT1EwQjFTos5v5TYEsONu5VwuT6R1CovI1iM62-Eak",
-  "daiMNsj8UKOx0uSJlPNEUR30r6XAWH-xnHPiDlrvX5s"
+  process.env.VAPID_PUBLIC_KEY, // Use env variables for security
+  process.env.VAPID_PRIVATE_KEY
 );
 
 // Middleware to check API key
